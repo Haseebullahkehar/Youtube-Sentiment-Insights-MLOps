@@ -11,45 +11,58 @@
       color: #f1f1f1;
       margin: 0;
       box-sizing: border-box;
-      width: 320px; /* Set a width that fits the Chrome extension popup */
+      width: 340px; /* slightly wider */
     }
     h1 {
       font-size: 20px;
       color: #ffffff;
     }
-    .section {
-      margin-bottom: 15px;
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #666;
+      background: #2a2a2a;
+      color: #fff;
     }
-    .section-title {
-      font-weight: bold;
-      color: #0099ff;
-      margin-top: 10px;
-      font-size: 16px;
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #0099ff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: #007acc;
+    }
+    .section {
+      margin-top: 15px;
     }
     .comment-list {
       list-style: none;
       padding: 0;
+      max-height: 250px;
+      overflow-y: auto;
     }
     .comment-item {
       margin: 8px 0;
       padding: 8px;
-      background-color: #444;
+      background-color: #333;
       border-radius: 4px;
     }
     .comment-sentiment {
       font-weight: bold;
-      color: #ffffff;
+      color: #00e676;
     }
-    /* Image Styling */
-    img {
-      width: 100%;
-      margin-top: 20px;
-    }
-    /* Metrics Styling */
     .metrics-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      margin-top: 15px;
     }
     .metric {
       width: 48%;
@@ -74,7 +87,14 @@
 </head>
 <body>
   <h1>YouTube Comment Insights</h1>
+
+  <!-- Input + Button -->
+  <input type="text" id="videoId" placeholder="Enter YouTube Video ID" />
+  <button id="analyzeBtn">Analyze Comments</button>
+
+  <!-- Results -->
   <div id="output" class="section"></div>
+
   <script src="popup.js"></script>
 </body>
 </html>
